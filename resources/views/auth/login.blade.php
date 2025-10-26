@@ -71,6 +71,10 @@
                                     Gunakan username dan password yang telah diberikan
                                 </small>
                             </div>
+                            <hr>
+<div class="text-center">
+    <a class="small" href="{{ route('register') }}">Belum punya akun? Daftar!</a>
+</div>
                         </div>
                     </div>
                 </div>

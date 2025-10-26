@@ -12,6 +12,11 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Route untuk menampilkan form registrasi
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+// Route untuk memproses registrasi
+Route::post('/register', [AuthController::class, 'register']);
+
 // Admin Routes
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');

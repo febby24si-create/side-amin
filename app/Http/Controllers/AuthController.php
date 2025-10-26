@@ -14,6 +14,10 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    public function showRegisterForm()
+    {
+        return view('auth.register');
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -39,6 +43,31 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|unique:users|max:100',
+            'password' => 'required|min:6|confirmed',
+            'role' => 'required|in:admin,operator',
+        ]);
+
+        try {
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
+                'role' => $request->role,
+            ]);
+
+            return redirect()->route('login')
+                ->with('success', 'Registrasi berhasil! Silakan login.');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
     public function logout(Request $request)
     {
         Auth::logout();
