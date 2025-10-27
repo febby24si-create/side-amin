@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login - SIPEDES</title>
-    
+
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -30,7 +30,7 @@
                                 </h1>
                                 <p class="text-muted mb-4">Sistem Informasi Pemerintahan Desa</p>
                             </div>
-                            
+
                             @if(session('success'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <i class="fas fa-check-circle"></i> {{ session('success') }}
@@ -49,39 +49,43 @@
                             @endif
 
                             <form class="user" method="POST" action="{{ route('login') }}">
-    @csrf
-    <div class="form-group">
-        <input type="email" class="form-control form-control-user"
-            name="email" value="{{ old('email') }}"
-            placeholder="Email" required autofocus>
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control form-control-user"
-            name="password" placeholder="Password" required>
-    </div>
-    <button type="submit" class="btn btn-primary btn-user btn-block">
-        <i class="fas fa-sign-in-alt"></i> Login
-    </button>
-</form>
-                            
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user"
+                                            name="email" value="{{ old('email') }}"
+                                            placeholder="Email" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                            name="password" placeholder="Password" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        <i class="fas fa-sign-in-alt"></i> Login
+                                    </button>
+                                </form>
+
                             <hr>
                             <div class="text-center">
                                 <small class="text-muted">
-                                    <i class="fas fa-info-circle"></i> 
+                                    <i class="fas fa-info-circle"></i>
                                     Gunakan username dan password yang telah diberikan
                                 </small>
                             </div>
                             <hr>
-<div class="text-center">
-    <a class="small" href="{{ route('register') }}">Belum punya akun? Daftar!</a>
-</div>
-                        </div>
+                            <div class="text-center">
+                                <a class="small" href="{{ route('register') }}">Belum punya akun? Daftar!</a>
+                            </div>
+                                                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6288708230676?text=Halo%20Admin,%20saya%20butuh%20bantuan%20login%20SIPEDES"
+       class="whatsapp-float" target="_blank" title="Hubungi Admin via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

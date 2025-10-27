@@ -15,7 +15,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Daftar User Sistem</h6>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="{{ route('admin.user.create') }}" class="btn btn-primary btn-sm">
+                    <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm">
                         <i class="fas fa-plus"></i> Tambah User
                     </a>
                 </div>
@@ -23,9 +23,9 @@
         </div>
         <div class="card-body">
             <!-- Form Pencarian -->
-            <form action="{{ route('admin.user.index') }}" method="GET" class="mb-4">
+            <form action="{{ route('user.index') }}" method="GET" class="mb-4">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari berdasarkan username atau nama lengkap..." 
+                    <input type="text" class="form-control" placeholder="Cari berdasarkan username atau nama lengkap..."
                            name="search" value="{{ request('search') }}">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit">
@@ -81,20 +81,20 @@
                             </td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <a href="{{ route('admin.user.show', $user->id) }}" 
+                                    <a href="{{ route('admin.user.show', $user->id) }}"
                                        class="btn btn-info btn-sm" title="Detail">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('admin.user.edit', $user->id) }}" 
+                                    <a href="{{ route('admin.user.edit', $user->id) }}"
                                        class="btn btn-warning btn-sm" title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     @if($user->id !== auth()->id())
-                                    <form action="{{ route('admin.user.destroy', $user->id) }}" 
+                                    <form action="{{ route('admin.user.destroy', $user->id) }}"
                                           method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" 
+                                        <button type="submit" class="btn btn-danger btn-sm"
                                                 onclick="return confirm('Apakah Anda yakin menghapus user ini?')"
                                                 title="Hapus">
                                             <i class="fas fa-trash"></i>

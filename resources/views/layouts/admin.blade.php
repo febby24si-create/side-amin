@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>SIPEDES - @yield('title')</title>
-    
+
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -116,18 +116,18 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
+                                    {{--  <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}  --}}
                                 </span>
-                                <span class="badge badge-{{ Auth::user()->role == 'admin' ? 'success' : 'info' }}">
+                                {{--  <span class="badge badge-{{ Auth::user()->role == 'admin' ? 'success' : 'info' }}">
                                     {{ Auth::user()->role == 'admin' ? 'Admin' : 'Operator' }}
-                                </span>
+                                </span>  --}}
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('admin.user.show', Auth::id()) }}">
+                                {{--  <a class="dropdown-item" href="{{ route('admin.user.show', Auth::id()) }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profil Saya
-                                </a>
+                                </a>  --}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -140,8 +140,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @include('partials.alert') {{-- NOMOR 9: Partial Alert --}}
-                    
+                    @include('partials.alert') 
+
                     @yield('content')
                 </div>
             </div>
@@ -197,13 +197,13 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
     <!-- Bootstrap Core JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- jQuery Easing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    
+
     <!-- SB Admin 2 JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.1.4/js/sb-admin-2.min.js"></script>
 

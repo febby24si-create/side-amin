@@ -41,9 +41,9 @@ class Warga extends Model
         return $this->hasMany(AnggotaLembaga::class, 'warga_id');
     }
 
-    // Relasi ke perangkat desa
-    public function perangkatDesa()
-    {
-        return $this->hasMany(PerangkatDesa::class, 'warga_id');
-    }
+    // // Relasi ke perangkat desa
+    // public function perangkatDesa()
+    // {
+    //     return $this->hasMany(PerangkatDesa::class, 'warga_id');
+    // }
 }
